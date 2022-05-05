@@ -2,41 +2,20 @@
 <html>
   
 <head>
-    <title>full screen iframe</title>
-    <style type="text/css">
-        html {
-            overflow: auto;
-        }
-          
-        html,
-        body,
-        div,
-        iframe {
-            margin: 0px;
-            padding: 0px;
-            height: 100%;
-            border: none;
-        }
-          
-        iframe {
-            display: block;
-            width: 100%;
-            border: none;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-    </style>
 </head>
   
 <body>
-    <iframe src="https://docs.google.com/viewer?url=https://rvezzani01.github.io/files/Almacrawler_BROCHURE%20BL_LINE_1090_ENG_A4%20(2)-min.pdf&embedded=true"
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0" 
-            width="100%" 
-            height="100%" 
-            scrolling="auto">
-  </iframe>
+  <div id="adobe-dc-view"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "43e35b81cbca46e8a5269006d6b3948f", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:{location: {url: "https://docs.google.com/viewer?url=https://rvezzani01.github.io/files/Almacrawler_BROCHURE%20BL_LINE_1090_ENG_A4%20(2)-min.pdf&embedded=true"}},
+			metaData:{fileName: "Brochure.pdf"}
+		}, {});
+	});
+</script>
   
 </body>
   
